@@ -26,9 +26,6 @@ public class notif implements LocalNotificationCallback {
         System.out.println("done");
     }
     
-    /*
-    hhhhhhh
-    */
 
     @Override
     public void localNotificationReceived(String notificationId) {
