@@ -25,6 +25,10 @@ public class notif implements LocalNotificationCallback {
         Display.getInstance().scheduleLocalNotification(n, System.currentTimeMillis() + 10, LocalNotification.REPEAT_MINUTE);
         System.out.println("done");
     }
+    
+    /*
+    hhhhhhh
+    */
 
     @Override
     public void localNotificationReceived(String notificationId) {

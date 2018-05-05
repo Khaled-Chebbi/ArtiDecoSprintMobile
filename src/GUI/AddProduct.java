@@ -77,6 +77,10 @@ public class AddProduct {
        // fAffichageCategorie.addComponent(new CheckBox("This is a CheckBox"));
        
        /*
+       yyyy
+       */
+       
+       /*
         Container listCat = new Container(BoxLayout.y());
         listCat.setScrollableY(true);
         
