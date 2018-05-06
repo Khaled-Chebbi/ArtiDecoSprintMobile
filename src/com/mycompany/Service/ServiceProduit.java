@@ -24,7 +24,7 @@ import java.util.Map;
  */
 public class ServiceProduit {
     
-    public ArrayList<Produit> getListAllAbonner() {
+    public ArrayList<Produit> getListAllProduits() {
         ArrayList<Produit> listProduit = new ArrayList<>();
         ConnectionRequest con = new ConnectionRequest();
         con.setUrl("http://localhost/ArtiiDeco/web/app_dev.php/api/products/all");

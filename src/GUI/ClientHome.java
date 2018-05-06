@@ -5,6 +5,7 @@
  */
 package GUI;
 
+import com.codename1.components.ToastBar;
 import com.codename1.notifications.LocalNotification;
 import com.codename1.ui.Button;
 import com.codename1.ui.Command;
@@ -90,16 +91,20 @@ public class ClientHome {
                 );
                
                */
-          
+               
+               
                 
-                int taille = serProd.getListAllAbonner().size();
+                
+                int taille = serProd.getListAllProduits().size();
                 Produit p = new Produit();
-                p.setTitre(serProd.getListAllAbonner().get(taille-1).getTitre());
-                p.setPrix(serProd.getListAllAbonner().get(taille-1).getPrix());
-                p.setDescription(serProd.getListAllAbonner().get(taille-1).getDescription());
+                p.setTitre(serProd.getListAllProduits().get(taille-1).getTitre());
+                p.setPrix(serProd.getListAllProduits().get(taille-1).getPrix());
+                p.setDescription(serProd.getListAllProduits().get(taille-1).getDescription());
                 
-                
-                Dialog.show("Le produit:", p.getTitre() +" \n "+p.getPrix()+"$ \n "+p.getDescription() , "OK", "Cancel");
+                ToastBar.showMessage("Le produit: "+p.getTitre() +" \n "+"avec "+p.getPrix()+"$ \n "+"et de "+p.getDescription(), FontImage.MATERIAL_THUMB_UP);
+                //ToastBar.showMessage("Le produit: "+p.getTitre() +" \n "+"avec "+p.getPrix()+"$ \n "+"et de "+p.getDescription(), FontImage.MATERIAL_THUMB_UP, 55);
+               
+               // Dialog.show("Le produit:", p.getTitre() +" \n "+p.getPrix()+"$ \n "+p.getDescription() , "OK", "Cancel");
                 
           
           
