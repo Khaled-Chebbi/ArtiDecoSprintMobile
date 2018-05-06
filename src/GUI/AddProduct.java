@@ -182,13 +182,16 @@ public class AddProduct {
                            }
                        }
                        
-                       
+                     
                        
                        ServiceMailing sm = new ServiceMailing();
                         String too = userClient.getEmail();
+                        System.out.println(too);
                         String content = "Hi "+ userClient.getNom() + " , votre boutique favorie " + userArtisan.getNomBoutique() + " a ArtiDeco ont ajouté le nouveau produit " + txtnomproduit.getText() + " mentionne par " + txtdescriptionproduit.getText() + " et avec un prix " + txtprixproduit.getText() + " dollars !!"; 
-                        
+                        System.out.println(content);
                         sm.SendMail(too, content);
+                        
+                        
                         
                         
                        

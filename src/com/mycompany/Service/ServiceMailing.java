@@ -31,7 +31,7 @@ public class ServiceMailing {
     Content content = new Content("text/plain", contentt);
     Mail mail = new Mail(from, subject, to, content);
 
-    SendGrid sg = new SendGrid("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");
+    SendGrid sg = new SendGrid("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");
     
          Request request = new Request();
     try {
@@ -46,5 +46,9 @@ public class ServiceMailing {
        ex.printStackTrace();
     }
   }
+     
     
 }
+
+
+
