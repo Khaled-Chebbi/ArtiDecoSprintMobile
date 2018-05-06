@@ -188,8 +188,9 @@ public class ArtisanHome {
         cmd1.setNextForm(form1);
         fArtisanHome.getToolbar().addCommandToSideMenu(cmd1);
 
-        NavigationCommand cmd2 = new NavigationCommand("Send message");
-        cmd2.setNextForm(form2);
+        NavigationCommand cmd2 = new NavigationCommand("About");
+        About abt = new About();
+        cmd2.setNextForm(abt.getfAbout());
         fArtisanHome.getToolbar().addCommandToSideMenu(cmd2);
 
         //Add Edit, Add and Delete Commands to the home Form context Menu

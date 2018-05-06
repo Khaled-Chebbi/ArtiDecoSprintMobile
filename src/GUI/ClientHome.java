@@ -99,7 +99,7 @@ public class ClientHome {
                 p.setDescription(serProd.getListAllAbonner().get(taille-1).getDescription());
                 
                 
-                Dialog.show("Un nouveau produit", p.getTitre() +" \n "+p.getPrix()+"$ \n "+p.getDescription() , "OK", "Cancel");
+                Dialog.show("Le produit:", p.getTitre() +" \n "+p.getPrix()+"$ \n "+p.getDescription() , "OK", "Cancel");
                 
           
           
@@ -200,7 +200,8 @@ public class ClientHome {
         fClientHome.getToolbar().addCommandToSideMenu(cmd1);
 
         NavigationCommand cmd2 = new NavigationCommand("About");
-        cmd2.setNextForm(form2);
+        About abt = new About();
+        cmd2.setNextForm(abt.getfAbout());
         fClientHome.getToolbar().addCommandToSideMenu(cmd2);
 
         //Add Edit, Add and Delete Commands to the home Form context Menu

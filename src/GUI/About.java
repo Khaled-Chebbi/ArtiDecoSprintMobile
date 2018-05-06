@@ -1,58 +1,84 @@
- /*
+/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package GUI;
 
-import com.codename1.ui.Button;
-import com.codename1.ui.ButtonGroup;
 import com.codename1.ui.CheckBox;
 import com.codename1.ui.Command;
 import com.codename1.ui.Container;
-import com.codename1.ui.Dialog;
 import com.codename1.ui.FontImage;
 import com.codename1.ui.Form;
 import com.codename1.ui.Image;
-import com.codename1.ui.NavigationCommand;
-import com.codename1.ui.RadioButton;
 import com.codename1.ui.events.ActionEvent;
-import com.codename1.ui.events.ActionListener;
+import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.BoxLayout;
 import com.codename1.ui.plaf.UIManager;
 import com.mycompany.Entite.ArtisansFavories;
 import com.mycompany.Entite.Categorie;
 import com.mycompany.Entite.Utilisateur;
 import com.mycompany.Service.ServiceAbonnement;
-import com.mycompany.Service.ServiceCategorie;
 import java.util.ArrayList;
 import java.util.List;
+import javafx.scene.control.Label;
 
 /**
  *
  * @author khaled Chebbi
  */
-public class ClientAbonnement {
+public class About {
     
-    Form fAffichageAbonnement;
+    
+    Form fAbout;
+         ClientHome ch;
+         ArtisanHome ah;
+   // Label lbl;
     //RadioButton rb;
-    CheckBox cb;
     
-    Utilisateur i = new Utilisateur();
 
-
-    ArrayList<Utilisateur> ListBoutiqueindex;
-    public static Categorie cat;
-    
-    
             
-    public ClientAbonnement()
+    public About()
     {
-        this.ListBoutiqueindex = new ArrayList<Utilisateur>();
-         //create and build the home Form
-        fAffichageAbonnement = new Form("Les Boutique disponibles");
-        fAffichageAbonnement.setLayout(new BoxLayout(BoxLayout.Y_AXIS));
         
+         //create and build the home Form
+        fAbout = new Form("Abous us");
+        fAbout.setLayout(new BoxLayout(BoxLayout.Y_AXIS));
+        
+        //lbl = new Label("ArtiDeco Team" + "\n" + "     - Chebbi khaled" +"\n"+ "     - Mezni Mouafek" +"\n"+ "     - Brandon Dieutoss" +"\n"+ "     - Ouaili Manel" +"\n");
+        Container container1 = new Container();
+        container1.setLayout(new BorderLayout(BorderLayout.CENTER_BEHAVIOR_CENTER_ABSOLUTE));
+        Container container2 = new Container();
+        container2.setLayout(new BorderLayout(BorderLayout.CENTER_BEHAVIOR_CENTER_ABSOLUTE));
+        Container container3 = new Container();
+        container3.setLayout(new BorderLayout(BorderLayout.CENTER_BEHAVIOR_CENTER_ABSOLUTE));
+        Container container4 = new Container();
+        container4.setLayout(new BorderLayout(BorderLayout.CENTER_BEHAVIOR_CENTER_ABSOLUTE));
+        Container container5 = new Container();
+        container5.setLayout(new BorderLayout(BorderLayout.CENTER_BEHAVIOR_CENTER_ABSOLUTE));
+        
+        com.codename1.ui.Label lbl1 = new com.codename1.ui.Label("ArtiDeco Team");
+        com.codename1.ui.Label lbl2 = new com.codename1.ui.Label("- Chebbi khaled");
+        com.codename1.ui.Label lbl3 = new com.codename1.ui.Label("- Mezni Mouafek");
+        com.codename1.ui.Label lbl4 = new com.codename1.ui.Label("- Ouili Manel");
+        com.codename1.ui.Label lbl5 = new com.codename1.ui.Label("- Brandon Dieutoss");
+        container1.add(BorderLayout.CENTER, lbl1);
+        container2.add(BorderLayout.CENTER, lbl2);
+        container3.add(BorderLayout.CENTER, lbl3);
+        container4.add(BorderLayout.CENTER, lbl4);
+        container5.add(BorderLayout.CENTER, lbl5);
+        
+        fAbout.add(container1);
+        fAbout.add(container2);
+        fAbout.add(container3);
+        fAbout.add(container4);
+        fAbout.add(container5);
+        
+         
+       
+         
+         //fAbout.addComponent(new Label("This is a Label"));
+                  
         
         //fAffichageCategorie.addComponent(new Label("This is a Label"));
         //fAffichageCategorie.addComponent(new Button("This is a Button"));
@@ -61,10 +87,12 @@ public class ClientAbonnement {
        // fAffichageCategorie.addComponent(txt);
        // fAffichageCategorie.addComponent(new CheckBox("This is a CheckBox"));
        
+       /*
+       
         Container listBoutiques = new Container(BoxLayout.y());
         listBoutiques.setScrollableY(true);
         
-        fAffichageAbonnement.add(listBoutiques);
+        fAbout.add(listBoutiques);
        
         ServiceAbonnement sa=new ServiceAbonnement();
         ArrayList<Utilisateur> lis = sa.getListArtisans();
@@ -89,7 +117,7 @@ public class ClientAbonnement {
             }
         });
         
-        */
+        
      
      List<CheckBox> checkboxes = new ArrayList<CheckBox>();
      
@@ -169,7 +197,7 @@ public class ClientAbonnement {
                 
         
         
-          /*  
+          
             cb.addPointerPressedListener((evt) -> {
                 
                     if(cb.isSelected() == true)
@@ -197,10 +225,10 @@ public class ClientAbonnement {
                        
                     }
                 });
-            */
+            
         }
+       
         
-        /*
         for(CheckBox cb : checkboxes)
         {
             
@@ -238,14 +266,14 @@ public class ClientAbonnement {
         
         
         
-     */
+     
         
         
         
         
         
         
-       /* RadioButton rb1 = new RadioButton("This is a Radio Button 1");
+        RadioButton rb1 = new RadioButton("This is a Radio Button 1");
         rb1.setGroup("group");
         fAffichageCategorie.addComponent(rb1);
         RadioButton rb2 = new RadioButton("This is a Radio Button 2");
@@ -272,27 +300,41 @@ public class ClientAbonnement {
 
     */
         
+        
+        
         //Create Form1 and Form2 and set a Back Command to navigate back to the home Form        
+        
+         
+        
         Form form1 = new Form("Form1");
         setBackCommand(form1);
         Form form2 = new Form("Form2");
         setBackCommand(form2);
         
-        ClientHome ch= new ClientHome();
+       
         
         Command back = new Command("") {
 
             @Override
             public void actionPerformed(ActionEvent evt) {
-                ch.getfClientHome().showBack();
+                if(Authentification.staticUser.getType_user().equals("Client"))
+                {
+                    ch = new ClientHome();
+                    ch.getfClientHome();
+                }
+                else
+                {
+                    ah = new ArtisanHome();
+                    ah.getfArtisanHome();
+                }   
             }
 
         };
         Image img = FontImage.createMaterial(FontImage.MATERIAL_ARROW_BACK, UIManager.getInstance().getComponentStyle("TitleCommand"));
         back.setIcon(img);
-        fAffichageAbonnement.getToolbar().addCommandToLeftBar(back);
-        fAffichageAbonnement.getToolbar().setTitleCentered(true);
-        fAffichageAbonnement.setBackCommand(back);
+        fAbout.getToolbar().addCommandToLeftBar(back);
+        fAbout.getToolbar().setTitleCentered(true);
+        fAbout.setBackCommand(back);
         
        /*
         ClientHome chome = new ClientHome();
@@ -312,6 +354,8 @@ public class ClientAbonnement {
         cmd2.setNextForm(aa.getfAffichageArtisanAbonner());
         fAffichageAbonnement.getToolbar().addCommandToSideMenu(cmd2);
         */
+       
+       /*
 
         //Add Edit, Add and Delete Commands to the home Form context Menu
         Image im = FontImage.createMaterial(FontImage.MATERIAL_REFRESH, UIManager.getInstance().getComponentStyle("Command"));
@@ -338,12 +382,12 @@ public class ClientAbonnement {
                 
                 UpdateCategorie uppcat = new UpdateCategorie();
                     uppcat.getfUpdateCategorie().show();
-*/
+
             }
         };
-        fAffichageAbonnement.getToolbar().addCommandToOverflowMenu(edit);
+        fAbout.getToolbar().addCommandToOverflowMenu(edit);
         
-        
+        */
 
         /*
         im = FontImage.createMaterial(FontImage.MATERIAL_LIBRARY_ADD, UIManager.getInstance().getComponentStyle("Command"));
@@ -395,7 +439,7 @@ public class ClientAbonnement {
         
         
 
-        fAffichageAbonnement.show();
+        fAbout.show();
     }
 
 
@@ -415,15 +459,13 @@ public class ClientAbonnement {
         f.setBackCommand(back);
     }
 
-    public Form getfAffichageAbonnement() {
-        return fAffichageAbonnement;
+    public Form getfAbout() {
+        return fAbout;
     }
 
-    public void setfAffichageAbonnement(Form fAffichageAbonnement) {
-        this.fAffichageAbonnement = fAffichageAbonnement;
+    public void setfAbout(Form fAbout) {
+        this.fAbout = fAbout;
     }
-    
-    
     
     
 }
