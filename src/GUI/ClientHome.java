@@ -75,7 +75,7 @@ public class ClientHome {
                // nt.noti();
                // nt.localNotificationReceived("hhhhhhhhiiiddd");
                 
-               
+               /*
                LocalNotification n = new LocalNotification();
                 n.setId("demo-notification");
                 n.setAlertBody("It's time to take a break and look at me");
@@ -88,8 +88,10 @@ public class ClientHome {
                 System.currentTimeMillis() + 10 * 1000, // fire date/time
                 LocalNotification.REPEAT_MINUTE  // Whether to repeat and what frequency
                 );
+               
+               */
           
-                /*
+                
                 int taille = serProd.getListAllAbonner().size();
                 Produit p = new Produit();
                 p.setTitre(serProd.getListAllAbonner().get(taille-1).getTitre());
@@ -99,7 +101,7 @@ public class ClientHome {
                 
                 Dialog.show("Un nouveau produit", p.getTitre() +" \n "+p.getPrix()+"$ \n "+p.getDescription() , "OK", "Cancel");
                 
-          */
+          
           
          
             }
