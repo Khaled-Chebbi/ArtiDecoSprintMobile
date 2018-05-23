@@ -8,14 +8,19 @@ package GUI;
 import com.codename1.ui.Button;
 import static com.codename1.ui.CN.CENTER;
 import static com.codename1.ui.CN.SOUTH;
+import com.codename1.ui.Command;
 import com.codename1.ui.Container;
 import com.codename1.ui.Dialog;
 import com.codename1.ui.FontImage;
 import com.codename1.ui.Form;
+import com.codename1.ui.Image;
 import com.codename1.ui.TextComponent;
+import com.codename1.ui.Toolbar;
+import com.codename1.ui.events.ActionEvent;
 import com.codename1.ui.events.ActionListener;
 import com.codename1.ui.layouts.BorderLayout;
 import com.codename1.ui.layouts.TextModeLayout;
+import com.codename1.ui.plaf.UIManager;
 import com.codename1.ui.validation.GroupConstraint;
 import com.codename1.ui.validation.LengthConstraint;
 import com.codename1.ui.validation.RegexConstraint;
@@ -39,6 +44,8 @@ public class Authentification {
     
     
     
+    
+    
     public Authentification()
     {
         TextModeLayout tm = new TextModeLayout(4, 2);
@@ -59,6 +66,10 @@ public class Authentification {
 //        PickerComponent dateOfBirth = PickerComponent.createDate(null).label("Birthday");
 //        content.add(dateOfBirth);
         
+       
+        
+  
+        
         content.setScrollableY(true);
         
         
@@ -78,6 +89,10 @@ public class Authentification {
         
         
        */
+       
+       
+       
+      
         
         Button submit = new Button("Submit");
         FontImage.setMaterialIcon(submit, FontImage.MATERIAL_DONE);
@@ -151,8 +166,27 @@ public class Authentification {
          
         });
         
+        
+        Image im = FontImage.createMaterial(FontImage.MATERIAL_ACCOUNT_CIRCLE, UIManager.getInstance().getComponentStyle("Command"));
+        Command edit = new Command("Sing up", im) {
+
+            public void actionPerformed(ActionEvent evt) {
+               
+               
+               Inscription ah = new Inscription();
+               ah.getLoginForm().show();
+                
+                      }
+        };
+        fAuthentification.getToolbar().addCommandToOverflowMenu(edit);
+        
+        
+        
         fAuthentification.add(CENTER, content);
         fAuthentification.add(SOUTH, submit);
+        
+//        fAuthentification.add(SOUTH, tb);
+//        fAuthentification.add(tb);
         // fAuthentification.add(SOUTH, b12);
         
         

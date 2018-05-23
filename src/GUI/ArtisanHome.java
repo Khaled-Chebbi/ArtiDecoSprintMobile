@@ -100,22 +100,28 @@ public class ArtisanHome {
 
             @Override
             public void actionPerformed(ActionEvent evt) {
-                
-                AddProduct addproduct = new AddProduct();
-                addproduct.getfAddproductSendingSMS().show();
-                
+                //-----sa c'est mon travil qui concerne SMS
+                //AddProduct addproduct = new AddProduct();
+               // addproduct.getfAddproductSendingSMS().show();
+               
                 //addprodtest addproduct = new addprodtest();
                 //addproduct.getfAddproductSendingSMS().show();
                 
+                
+               HomeForm hf = new HomeForm();
+               hf.getF().show();
                 
                 
             }
             
         });
+            
+            
 
         fArtisanHome.addComponent(b1);
         fArtisanHome.addComponent(b2);
         fArtisanHome.addComponent(b3);
+       
         
         
        /*

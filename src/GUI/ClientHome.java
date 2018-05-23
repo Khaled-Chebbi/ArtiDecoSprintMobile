@@ -27,6 +27,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+
+
 /**
  *
  * @author khaled Chebbi
@@ -51,6 +53,8 @@ public class ClientHome {
      //   txt.setHint("This is a TextField");
        // fAffichageCategorie.addComponent(txt);
        // fAffichageCategorie.addComponent(new CheckBox("This is a CheckBox"));
+       
+       
        
        
        
@@ -113,6 +117,7 @@ public class ClientHome {
             
         });
             
+            
         
             Button b2 = new Button("Consulter vos abonnements");
             b2.addActionListener(new ActionListener() {
@@ -129,10 +134,75 @@ public class ClientHome {
             }
             
         });
+            
+            
+            
+            
+            
+            Button commandes = new Button("Commandes");
+            commandes.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+               VendeurCommandesForm v = null;
+                try {
+                    v = new VendeurCommandesForm();
+                } catch (IOException ex) {
+                   
+                }
+               
+               v.getPsdTutorial().show();
+               
+            }
+        });
+            
+            Button reclamation = new Button("Réclamations");
+            reclamation.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+               
+                AddReclamation addrec = new AddReclamation();
+                addrec.getfAddreclamation().show();
+               
+              
+               
+            }
+        });
+            
+            Button profile = new Button("Profile");
+            profile.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent evt) {
+               
+                Profile profile= new Profile();
+                profile.getfProfile().show();
 
+            }
+        });
+        
         fClientHome.addComponent(b1);
         fClientHome.addComponent(b2);
+        fClientHome.addComponent(commandes);
+        fClientHome.addComponent(reclamation);
+        fClientHome.addComponent(profile);
         
+         
+         
+         
+        
+        
+        /*
+        
+        
+        
+        */
+        
+        //fClientHome.addComponent(b1);
+       // fClientHome.addComponent(b2);
+       //  fClientHome.addComponent(red);
+          //fClientHome.addComponent(commandes);
+         
+        
+
         
        /*
         ServiceCategorie serviceCategorie=new ServiceCategorie();
